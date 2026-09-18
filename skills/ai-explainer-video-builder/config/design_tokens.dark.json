@@ -1,0 +1,24 @@
+{
+  "name": "dark_tech",
+  "background": "#0B1020",
+  "surface": "#11182B",
+  "text_primary": "#F5F7FB",
+  "text_secondary": "#AAB2C4",
+  "accent": "#6EA8FE",
+  "border": "#26304A",
+  "shadow": "rgba(0,0,0,0.32)",
+  "radius": 28,
+  "safe_margin_x": 150,
+  "safe_margin_y": 100,
+  "title_size": 88,
+  "hammer_size": 220,
+  "body_size": 46,
+  "caption_size": 30,
+  "font_family": "Inter, PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif",
+  "motion": {
+    "enter_frames": 16,
+    "exit_frames": 10,
+    "scale_from": 0.96,
+    "slide_px": 32
+  }
+}

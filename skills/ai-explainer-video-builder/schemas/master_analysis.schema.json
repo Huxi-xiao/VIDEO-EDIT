@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Master Analysis",
+  "type": "object",
+  "required": ["project", "primary", "sections"],
+  "properties": {
+    "project": {"type": "string"},
+    "primary": {
+      "type": "object",
+      "required": ["type", "path"],
+      "properties": {
+        "type": {"enum": ["video", "audio", "script"]},
+        "path": {"type": "string"}
+      }
+    },
+    "asset_annotations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "label", "stage", "keywords"],
+        "properties": {
+          "path": {"type": "string"},
+          "label": {"type": "string"},
+          "action": {"type": "string"},
+          "object": {"type": "string"},
+          "software": {"type": "string"},
+          "stage": {"enum": ["BEFORE", "ACTION", "PROCESS", "RESULT", "AFTER", "UNKNOWN"]},
+          "keywords": {"type": "array", "items": {"type": "string"}},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+        }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "source_start", "source_end", "keep", "content_type", "importance", "transcript", "visual"],
+        "properties": {
+          "id": {"type": "string"},
+          "source_start": {"type": "number", "minimum": 0},
+          "source_end": {"type": "number", "minimum": 0},
+          "keep": {"type": "boolean"},
+          "content_type": {"type": "string"},
+          "importance": {"enum": ["A", "B", "C"]},
+          "transcript": {"type": "string"},
+          "concept": {"type": "string"},
+          "cleanup_tags": {"type": "array", "items": {"type": "string"}},
+          "visual": {
+            "type": "object",
+            "required": ["preferred_type", "match_query"],
+            "properties": {
+              "preferred_type": {"enum": ["AROLL", "SCREEN", "MEDIA", "SLIDE", "HAMMER", "MOTION", "AI_IMAGE"]},
+              "layout": {"type": "string"},
+              "headline": {"type": "string"},
+              "body": {"type": "array", "items": {"type": "string"}},
+              "density": {"enum": ["low", "medium", "high"]},
+              "motion": {"type": "string"},
+              "ai_image_prompt": {"type": "string"},
+              "match_query": {
+                "type": "object",
+                "properties": {
+                  "action": {"type": "string"},
+                  "object": {"type": "string"},
+                  "software": {"type": "string"},
+                  "stage": {"enum": ["BEFORE", "ACTION", "PROCESS", "RESULT", "AFTER", "UNKNOWN"]},
+                  "keywords": {"type": "array", "items": {"type": "string"}}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

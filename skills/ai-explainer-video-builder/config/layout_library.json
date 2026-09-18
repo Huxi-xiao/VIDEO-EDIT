@@ -1,0 +1,16 @@
+{
+  "layouts": [
+    {"id": "hammer_center", "types": ["HAMMER"], "density": "low", "description": "Single oversized concept, centered, generous whitespace."},
+    {"id": "statement_left", "types": ["SLIDE"], "density": "low", "description": "Large statement aligned left with one optional small supporting line."},
+    {"id": "comparison_50_50", "types": ["SLIDE", "MOTION"], "density": "high", "description": "Two equal comparison cards."},
+    {"id": "comparison_70_30", "types": ["SLIDE", "MOTION"], "density": "medium", "description": "Primary conclusion large, contrast small."},
+    {"id": "steps_vertical", "types": ["SLIDE", "MOTION"], "density": "high", "description": "2-5 numbered steps in a clean vertical stack."},
+    {"id": "list_three", "types": ["SLIDE"], "density": "medium", "description": "Three concise parallel points."},
+    {"id": "flow_center", "types": ["MOTION", "SLIDE"], "density": "medium", "description": "3-5 nodes with arrows or path flow."},
+    {"id": "data_big_number", "types": ["SLIDE", "MOTION"], "density": "low", "description": "One dominant number with short explanation."},
+    {"id": "result_focus", "types": ["SLIDE", "MEDIA"], "density": "low", "description": "Strong result/reveal with one evidence visual."},
+    {"id": "media_70_30", "types": ["MEDIA", "SCREEN"], "density": "medium", "description": "Large media area and narrow text/annotation column."},
+    {"id": "media_full_bleed", "types": ["MEDIA", "AI_IMAGE"], "density": "low", "description": "Full-bleed image with optional minimal label."},
+    {"id": "screen_focus", "types": ["SCREEN"], "density": "medium", "description": "Screen recording in rounded frame with optional single callout."}
+  ]
+}

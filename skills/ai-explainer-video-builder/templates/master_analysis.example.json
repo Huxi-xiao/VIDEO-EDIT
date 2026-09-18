@@ -1,0 +1,60 @@
+{
+  "project": "demo",
+  "primary": {"type": "video", "path": "01_primary/video/口播.mp4"},
+  "asset_annotations": [
+    {
+      "path": "02_screen_recordings/01_ACTION_上传PDF.mp4",
+      "label": "NotebookLM上传PDF资料",
+      "action": "上传",
+      "object": "PDF资料",
+      "software": "NotebookLM",
+      "stage": "ACTION",
+      "keywords": ["上传", "PDF", "资料"],
+      "confidence": 0.95
+    }
+  ],
+  "sections": [
+    {
+      "id": "S01",
+      "source_start": 0.0,
+      "source_end": 4.0,
+      "keep": true,
+      "content_type": "HOOK",
+      "importance": "A",
+      "transcript": "真正的问题不是不会，而是太碎。",
+      "concept": "碎",
+      "cleanup_tags": [],
+      "visual": {
+        "preferred_type": "HAMMER",
+        "layout": "hammer_center",
+        "headline": "碎",
+        "body": [],
+        "density": "low",
+        "motion": "SlowScale",
+        "ai_image_prompt": "",
+        "match_query": {"action":"","object":"","software":"","stage":"UNKNOWN","keywords":[]}
+      }
+    },
+    {
+      "id": "S02",
+      "source_start": 4.0,
+      "source_end": 9.0,
+      "keep": true,
+      "content_type": "DEMO",
+      "importance": "A",
+      "transcript": "接下来把准备好的PDF资料直接拖进去。",
+      "concept": "上传资料",
+      "cleanup_tags": [],
+      "visual": {
+        "preferred_type": "SCREEN",
+        "layout": "screen_focus",
+        "headline": "上传资料",
+        "body": [],
+        "density": "medium",
+        "motion": "Fade",
+        "ai_image_prompt": "",
+        "match_query": {"action":"上传","object":"PDF资料","software":"NotebookLM","stage":"ACTION","keywords":["上传","PDF","资料"]}
+      }
+    }
+  ]
+}

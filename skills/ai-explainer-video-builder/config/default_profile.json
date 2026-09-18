@@ -1,0 +1,85 @@
+{
+  "profile_name": "youtube_default",
+  "version": 2,
+  "workflow_mode": "critical_checkpoints",
+  "primary_source_priority": ["video", "audio", "script"],
+  "matching": {
+    "minimum_score": 0.65,
+    "weights": {
+      "filename": 0.30,
+      "semantic": 0.30,
+      "stage": 0.20,
+      "media_type": 0.10,
+      "sequence": 0.10
+    }
+  },
+  "content_cleanup": {
+    "remove_obvious_fillers": true,
+    "remove_restarts": true,
+    "remove_repetition": true,
+    "shorten_long_pauses": true,
+    "preserve_natural_breathing": true,
+    "rewrite_level": "light",
+    "allow_new_opinions": false
+  },
+  "voice": {
+    "voice_clone_when_script_primary": "prefer_if_authorized_and_available",
+    "voice_repair": true,
+    "allow_connection_words": true,
+    "allow_new_claims": false,
+    "cover_repaired_talking_head_with_broll": true
+  },
+  "visual": {
+    "design_system": "light_minimal",
+    "density": "medium_high",
+    "copy_compression": "standard_strong",
+    "visual_hammer": true,
+    "hammer_intensity_default": 2,
+    "max_dense_slots_in_a_row": 2,
+    "priorities": [
+      "screen_recording",
+      "extra_video",
+      "image",
+      "slide",
+      "motion",
+      "ai_image"
+    ]
+  },
+  "ai_image": {
+    "enabled": true,
+    "approval": "profile_controlled",
+    "max_auto_retries": 2,
+    "fallback": "motion_or_slide"
+  },
+  "ai_video": {
+    "enabled": "auto_detect_capability",
+    "approval": "always_manual",
+    "auto_paid_retry": false,
+    "show_cost_estimate": true,
+    "fallback": "ai_image_motion"
+  },
+  "audio": {
+    "bgm": "prefer_user_asset_else_optional",
+    "sfx_density": "restrained",
+    "preserve_stems": true
+  },
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "final_master": true,
+    "final_no_subtitles": true,
+    "numbered_timeline_clips": true,
+    "audio_stems": true,
+    "subtitles_srt": true,
+    "timeline_csv": true,
+    "timeline_json": true,
+    "storyboard_md": true
+  },
+  "failsafe": {
+    "bounded_retries": true,
+    "checkpoint_after_task": true,
+    "circuit_breaker": true,
+    "prefer_degrade_over_block": true
+  }
+}
